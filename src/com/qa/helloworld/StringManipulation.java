@@ -17,35 +17,40 @@ public class StringManipulation {
 		// Q2
 
 		//countWords("my string has words");
-		verticalWords("p yr amid");
+		verticalWords("this is a sentence");
 
 	}
 
 	private static void verticalWords(String string) {
 
+		int charCount = 0;
+		int wordEnd = 0;
+		
 		for (int i = 0; i < string.length(); i++) {
 
 			if (string.substring(i, i + 1).equals(" ")) {
-				System.out.println(string.substring(i));
-			}else {
-				System.out.println(string.substring(i));
+				wordEnd = i+1;
+				System.out.println(string.substring(i - charCount, wordEnd));
+				charCount = 0;
+			} else {
+				charCount++;
 			}
 		}
 
 	}
 
-	private static void countWords(String string) {
-
-		int wordCount = 1;
-
-		for (int i = 0; i < string.length(); i++) {
-
-			if (string.substring(i, i + 1).equals(" ")) {
-				wordCount++;
-			}
-		}
-		System.out.println("Number of words: " + wordCount);
-
-	}
+//	private static void countWords(String string) {
+//
+//		int wordCount = 1;
+//
+//		for (int i = 0; i < string.length(); i++) {
+//
+//			if (string.substring(i, i + 1).equals(" ")) {
+//				wordCount++;
+//			}
+//		}
+//		System.out.println("Number of words: " + wordCount);
+//
+//	}
 
 }
